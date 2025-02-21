@@ -1,7 +1,7 @@
 ---
-title: 'ethdevnews weekly #0'
+title: 'ethdevnews weekly #1'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: 'April 25 2025'
+pubDate: 'May 2 2025'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 
