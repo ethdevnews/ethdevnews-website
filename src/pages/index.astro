@@ -1,23 +1,17 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BlogPost from '../layouts/BlogPost.astro';
+import { render } from 'astro:content';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+
+const post = posts[0];
+const { Content } = await render(post);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Welcome</h1>
-			<p>
-				Welcome to ethdevnews.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BlogPost {...post.data}>
+	<Content />
+</BlogPost>
