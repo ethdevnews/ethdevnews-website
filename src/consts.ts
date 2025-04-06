@@ -32,15 +32,15 @@ export const ABOUT: Metadata = {
 
 export const SOCIALS: Socials = [
   {
-    NAME: "X (Twitter)",
+    NAME: "X",
     HREF: "https://x.com/ethdevnews",
+  },
+  {
+    NAME: "Farcaster",
+    HREF: "https://warpcast.com/ethdevnews",
   },
   {
     NAME: "GitHub",
     HREF: "https://github.com/ethdevnews/ethdevnews-website",
-  },
-  {
-    NAME: "Website",
-    HREF: "https://ethdevnews.com",
   },
 ];
