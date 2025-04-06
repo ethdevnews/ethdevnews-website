@@ -2,4 +2,4 @@
 
 ## Credits
 
-Based on [Astro Starter Kit: Blog](https://github.com/withastro/astro/tree/latest/examples/blog)
+Based on [Astro Micro](https://github.com/trevortylerlee/astro-micro)
