@@ -7,17 +7,17 @@ import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-const blog = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
+const issues = (await getCollection("issues"))
+  .filter((issue) => !issue.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const calendar: CollectionEntry<"calendar">[] = (
   await getCollection("calendar")
 )
-  .filter((project) => !project.data.draft)
+  .filter((calendarItem) => !calendarItem.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+  .slice(0, SITE.NUM_CALENDAR_ITEMS_ON_HOMEPAGE);
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -42,13 +42,13 @@ const calendar: CollectionEntry<"calendar">[] = (
             <h2 class="font-semibold text-black dark:text-white">
               Latest issues
             </h2>
-            <Link href="/blog"> See archive </Link>
+            <Link href="/archive"> See archive </Link>
           </div>
           <ul class="not-prose flex flex-col gap-4">
             {
-              blog.map((post) => (
+              issues.map((issue) => (
                 <li>
-                  <ArrowCard entry={post} />
+                  <ArrowCard entry={issue} />
                 </li>
               ))
             }

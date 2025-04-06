@@ -5,74 +5,74 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrevious from "@components/BackToPrevious.astro";
-import PostNavigation from "@components/PostNavigation.astro";
+import IssueNavigation from "@components/IssueNavigation.astro";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog"))
-    .filter((post) => !post.data.draft)
+  const issues = (await getCollection("issues"))
+    .filter((issue) => !issue.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  return posts.map((post) => ({
-    params: { id: post.id },
-    props: post,
+  return issues.map((issue) => ({
+    params: { id: issue.id },
+    props: issue,
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"issues">;
 
-const posts = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
+const issues = (await getCollection("issues"))
+  .filter((issue) => !issue.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-function getNextPost() {
-  let postIndex;
-  for (const post of posts) {
-    if (post.id === Astro.params.id) {
-      postIndex = posts.indexOf(post);
-      return posts[postIndex + 1];
+function getNextIssue() {
+  let issueIndex;
+  for (const issue of issues) {
+    if (issue.id === Astro.params.id) {
+      issueIndex = issues.indexOf(issue);
+      return issues[issueIndex + 1];
     }
   }
 }
 
-function getPrevPost() {
-  let postIndex;
-  for (const post of posts) {
-    if (post.id === Astro.params.id) {
-      postIndex = posts.indexOf(post);
-      return posts[postIndex - 1];
+function getPrevIssue() {
+  let issueIndex;
+  for (const issue of issues) {
+    if (issue.id === Astro.params.id) {
+      issueIndex = issues.indexOf(issue);
+      return issues[issueIndex - 1];
     }
   }
 }
 
-const nextPost = getNextPost();
-const prevPost = getPrevPost();
+const nextIssue = getNextIssue();
+const prevIssue = getPrevIssue();
 
-const post = Astro.props;
-const { Content, headings } = await render(post);
+const issue = Astro.props;
+const { Content, headings } = await render(issue);
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
+<Layout title={issue.data.title} description={issue.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrevious href="/blog">Back to archive </BackToPrevious>
+      <BackToPrevious href="/archive">Back to archive </BackToPrevious>
     </div>
     <div class="my-10 space-y-1">
+      <h1 class="animate text-3xl font-semibold text-black dark:text-white">
+        {issue.data.title}
+      </h1>
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
-          <FormattedDate date={post.data.date} />
+          <FormattedDate date={issue.data.date} />
         </div>
         &bull;
-        {post.body && (
+        {issue.body && (
           <div class="font-base text-sm">
-            {readingTime(post.body)}
+            {readingTime(issue.body)}
           </div>
         )}        
       </div>
-      <h1 class="animate text-3xl font-semibold text-black dark:text-white">
-        {post.data.title}
-      </h1>
       {
-        post.data.tags && post.data.tags?.length > 0 ? (
+        issue.data.tags && issue.data.tags?.length > 0 ? (
           <div class="animate flex gap-2 pt-1">
-            {post.data.tags.map((tag) => (
+            {issue.data.tags.map((tag) => (
               <a
                 href={`/tags/${tag}`}
                 class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
@@ -87,7 +87,7 @@ const { Content, headings } = await render(post);
     <article class="animate">
       <Content />
       <div class="mt-24">
-        <PostNavigation prevPost={prevPost} nextPost={nextPost} />
+        <IssueNavigation prevIssue={prevIssue} nextIssue={nextIssue} />
       </div>
     </article>
   </Container>

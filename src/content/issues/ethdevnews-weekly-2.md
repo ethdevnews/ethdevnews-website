@@ -2,7 +2,7 @@
 title: 'ethdevnews weekly #2'
 description: 'Ethereum news, May 16 2025'
 date: 'May 16 2025'
-draft: true
+draft: false
 ---
 
 ### All core devs (protocol calls)

@@ -2,7 +2,7 @@
 title: 'ethdevnews weekly #1'
 description: 'Ethereum news, May 9 2025: mainnet upgraded to Pectra'
 date: 'May 9 2025'
-draft: true
+draft: false
 ---
 
 ### All core devs (protocol calls)

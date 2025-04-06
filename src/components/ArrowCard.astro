@@ -2,11 +2,11 @@
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"calendar">;
+  entry: CollectionEntry<"issues"> | CollectionEntry<"calendar">;
 };
 
 const { entry } = Astro.props as {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"calendar">;
+  entry: CollectionEntry<"issues"> | CollectionEntry<"calendar">;
 };
 ---
 

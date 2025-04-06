@@ -5,24 +5,24 @@ import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { ARCHIVE } from "@consts";
 
-const data = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
+const data = (await getCollection("issues"))
+  .filter((issue) => !issue.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 type Acc = {
-  [year: string]: CollectionEntry<"blog">[];
+  [year: string]: CollectionEntry<"issues">[];
 };
 
-const posts = data.reduce((acc: Acc, post) => {
-  const year = post.data.date.getFullYear().toString();
+const issues = data.reduce((acc: Acc, issue) => {
+  const year = issue.data.date.getFullYear().toString();
   if (!acc[year]) {
     acc[year] = [];
   }
-  acc[year].push(post);
+  acc[year].push(issue);
   return acc;
 }, {});
 
-const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
+const years = Object.keys(issues).sort((a, b) => parseInt(b) - parseInt(a));
 ---
 
 <Layout title={ARCHIVE.TITLE} description={ARCHIVE.DESCRIPTION}>
@@ -38,9 +38,9 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
                 </div>
                 <div>
                   <ul class="not-prose flex flex-col gap-4">
-                    {posts[year].map((post) => (
+                    {issues[year].map((issue) => (
                       <li>
-                        <ArrowCard entry={post} />
+                        <ArrowCard entry={issue} />
                       </li>
                     ))}
                   </ul>
