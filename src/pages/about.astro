@@ -1,17 +1,63 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import { ABOUT } from "@consts";
+import Link from "@components/Link.astro";
+
 ---
 
-<Layout
-	title="about"
-	description="ethdevnews curates Ethereum news for the developer community"
-	pubDate={new Date('March 27 2025')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		ethdevnews curates Ethereum news for the developer community.
-	</p>
-	<p>
-		We stand on the shoulders of <a href="https://weekinethereumnews.com">Week in Ethereum News</a> (August 2017 to December 2024).
-	</p>
+<Layout title={ABOUT.TITLE} description={ABOUT.DESCRIPTION}>
+  <Container>
+    <aside data-pagefind-ignore>
+      <h1 class="font-semibold text-black dark:text-white">
+        About
+      </h1>
+      <div class="space-y-16">
+        <section>
+          <article class="space-y-4">
+            <span>
+              <p>
+
+              </p>
+            </span>
+            <span class="animate">
+              <p>
+                ethdevnews
+              </p>
+            </span>
+          </article>
+        </section>
+      </div>
+      <section class="animate space-y-4">
+        <h2 class="font-semibold text-black dark:text-white">
+          Disclosures
+        </h2>
+        <article>
+          <p>
+            
+          </p>
+        </article>
+      </section>
+      <section class="animate space-y-4">
+        <h2 class="font-semibold text-black dark:text-white">
+          Resources
+        </h2>
+        <article>
+          <p>
+            
+          </p>
+        </article>
+      </section>
+      <section class="animate space-y-4">
+        <h2 class="font-semibold text-black dark:text-white">
+          Credits
+        </h2>
+        <article>
+          <p>
+            
+          </p>
+        </article>
+      </section>
+    </aside>
+  </Container>
 </Layout>

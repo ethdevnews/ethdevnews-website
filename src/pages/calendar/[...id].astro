@@ -1,0 +1,61 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import { readingTime } from "@lib/utils";
+import BackToPrevious from "@components/BackToPrevious.astro";
+import Link from "@components/Link.astro";
+
+export async function getStaticPaths() {
+  const calendar = (await getCollection("calendar"))
+    .filter((calendarItem) => !calendarItem.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  return calendar.map((calendarItem) => ({
+    params: { id: calendarItem.id },
+    props: calendarItem,
+  }));
+}
+type Props = CollectionEntry<"calendar">;
+
+const calendarItem = Astro.props;
+const { Content, headings } = await render(calendarItem);
+---
+
+<Layout title={calendarItem.data.title} description={calendarItem.data.description}>
+  <Container>
+    <div class="animate">
+      <BackToPrevious href="/projects">Back to projects</BackToPrevious>
+    </div>
+    <div class="animate my-10 space-y-1">
+      <div class="flex items-center gap-1.5">
+        <div class="font-base text-sm">
+          <FormattedDate date={calendarItem.data.date} />
+        </div>
+        &bull;
+        {calendarItem.body && (
+          <div class="font-base text-sm">
+            {readingTime(calendarItem.body)}
+          </div>
+        )}     
+      </div>
+      <h1 class="text-3xl font-semibold text-black dark:text-white">
+        {calendarItem.data.title}
+      </h1>
+      {
+        (calendarItem.data.url) && (
+          <nav class="flex gap-1">
+            {calendarItem.data.url && (
+              <Link href={calendarItem.data.url} external>
+                website
+              </Link>
+            )}
+          </nav>
+        )
+      }
+    </div>
+    <article class="animate">
+      <Content />
+    </article>
+  </Container>
+</Layout>

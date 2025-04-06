@@ -1,16 +1,19 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import mdx from "@astrojs/mdx";
+import pagefind from "astro-pagefind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ethdevnews.com',
-  integrations: [mdx(), sitemap()],
-
+  site: "https://astro-micro.vercel.app",
+  integrations: [sitemap(), mdx(), pagefind()],
   vite: {
     plugins: [tailwindcss()],
+  },
+  markdown: {
+    shikiConfig: {
+      theme: "css-variables",
+    },
   },
 });
