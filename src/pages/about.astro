@@ -3,60 +3,96 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { ABOUT } from "@consts";
 import Link from "@components/Link.astro";
-
 ---
 
 <Layout title={ABOUT.TITLE} description={ABOUT.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
-      <h1 class="font-semibold text-black dark:text-white">
-        About
-      </h1>
+      <h1 class="font-semibold text-black dark:text-white">About</h1>
       <div class="space-y-16">
         <section>
           <article class="space-y-4">
             <span>
               <p>
-
-              </p>
-            </span>
-            <span class="animate">
-              <p>
-                ethdevnews
+                ethdevnews is curated Ethereum news focused on developers (core
+                & application), published by Andrew B Coathup.
               </p>
             </span>
           </article>
         </section>
       </div>
       <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">
-          Disclosures
-        </h2>
+        <h2 class="font-semibold text-black dark:text-white">Disclosures</h2>
         <article>
           <p>
-            
+            Andrew invested in ETH and holds OP (airdrops & RetroPGF) and ENS
+            (airdrop).
           </p>
         </article>
       </section>
       <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">
-          Resources
-        </h2>
+        <h2 class="font-semibold text-black dark:text-white">Resources</h2>
+        <h3 class="font-semibold text-black dark:text-white">
+          <Link href="https://ethereum-magicians">Eth Research</Link>
+        </h3>
         <article>
-          <p>
-            
-          </p>
-        </article>
+          <p>Discourse forum for Ethereum research.</p></article>
       </section>
-      <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">
-          Credits
-        </h2>
+        <h3 class="font-semibold text-black dark:text-white">
+          <Link href="https://ethereum-magicians">Eth Magicians</Link>
+        </h3>
         <article>
-          <p>
-            
-          </p>
-        </article>
+          <p>Discourse forum for protocol call notes, EIP/RIP/ERC discussions and naming discussions.
+          Andrew is a moderator.</p></article>
+      </section>
+      <h3 class="font-semibold text-black dark:text-white">
+        Eth R&D Discord
+      </h3>
+      <article>
+        <p>Discord for discussions on Eth R&D.</p></article>
+    </section>
+
+
+      <section class="animate space-y-4">
+        <h2 class="font-semibold text-black dark:text-white">Credits</h2>
+        <h3 class="font-semibold text-black dark:text-white">
+          <Link href="https://weekinethereumnews.com"
+            >Week in Ethereum News</Link
+          > (WiEN)
+        </h3>
+        <p>
+          WiEN was published by <Link href="https://x.com/evanvanness"
+            >Evan Van Ness</Link
+          > from August 2016 until December 2024. Andrew was the editor from May
+          2021 until it ended. WiEN set the standard for high quality curated Ethereum
+          developer news. ethdevnews stands on the shoulders of the giant that was
+          WiEN.
+        </p>
+
+        <h3 class="font-semibold text-black dark:text-white">
+          <Link href="https://github.com/trevortylerlee/astro-micro"
+            >Astro Micro</Link
+          >
+        </h3>
+        <p>
+          Astro Micro is an accessible theme for Astro. ethdevnews is built on
+          Astro and uses Astro Micro as a base.
+        </p>
+
+        <h3 class="font-semibold text-black dark:text-white">
+          <Link href="https://daringfireball.net">Daring Fireball</Link> (DF)
+        </h3>
+        <p>
+          John Gruber's DF is a minimalistic blog focused (mostly) on a single
+          topic. DF is sustained by a single weekly sponsor. ethdevnews
+          minimalism and long term sustainability model is inspired by DF.
+        </p>
+        <p>
+          John is the creator of <Link
+            href="https://daringfireball.net/2004/03/introducing_markdown"
+            >Markdown</Link
+          >. ethdevnews is written in Markdown.
+        </p>
       </section>
     </aside>
   </Container>
