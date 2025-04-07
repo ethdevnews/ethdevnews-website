@@ -2,16 +2,16 @@
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  entry: CollectionEntry<"issues"> | CollectionEntry<"calendar">;
+  entry: CollectionEntry<"issues">;
 };
 
 const { entry } = Astro.props as {
-  entry: CollectionEntry<"issues"> | CollectionEntry<"calendar">;
+  entry: CollectionEntry<"issues">;
 };
 ---
 
 <a
-  href={`/${entry.collection}/${entry.id}`}
+  href={`/${entry.id}`}
   class="not-prose group relative flex flex-nowrap rounded-lg border border-black/15 px-4 py-3 pr-10 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
 >
   <div class="flex flex-1 flex-col truncate">
