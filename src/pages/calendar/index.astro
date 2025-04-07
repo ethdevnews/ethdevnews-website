@@ -7,7 +7,7 @@ import { CALENDAR } from "@consts";
 
 const calendar = (await getCollection("calendar"))
   .filter((item) => !item.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
 ---
 
 <Layout title={CALENDAR.TITLE} description={CALENDAR.DESCRIPTION}>

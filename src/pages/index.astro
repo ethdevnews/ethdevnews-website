@@ -17,7 +17,7 @@ const calendar: CollectionEntry<"calendar">[] = (
   await getCollection("calendar")
 )
   .filter((calendarItem) => !calendarItem.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .slice(0, SITE.NUM_CALENDAR_ITEMS_ON_HOMEPAGE);
 ---
 
