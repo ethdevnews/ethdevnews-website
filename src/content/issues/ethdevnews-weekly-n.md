@@ -1,6 +1,6 @@
 ---
 title: 'ethdevnews weekly #n'
-description: 'Ethereum news, Jan 1 2029'
+description: 'Template'
 date: 'Jan 1 2029'
 draft: true
 ---

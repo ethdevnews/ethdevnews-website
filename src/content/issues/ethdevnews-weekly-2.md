@@ -1,6 +1,6 @@
 ---
 title: 'ethdevnews weekly #2'
-description: 'Ethereum news, May 16 2025'
+description: ''
 date: 'May 16 2025'
 draft: false
 ---

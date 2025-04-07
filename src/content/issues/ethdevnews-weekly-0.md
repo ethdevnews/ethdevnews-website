@@ -1,6 +1,6 @@
 ---
 title: 'ethdevnews weekly #0'
-description: 'Ethereum news, May 2 2025: update your nodes'
+description: 'hello world, update your nodes ready for Pectra'
 date: 'May 2 2025'
 ---
 
