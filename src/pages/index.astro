@@ -30,16 +30,6 @@ const calendar: CollectionEntry<"calendar">[] = (
   <Container>
     <aside data-pagefind-ignore>
       <div class="space-y-16">
-        <section>
-          <article class="space-y-4">
-            <span>
-              <p>
-                Subscribe
-              </p>
-            </span>
-          </article>
-        </section>
-
         <div class="my-10 space-y-1">
           <h1 class="animate text-3xl font-semibold text-black dark:text-white">
             {issue.data.title}
@@ -56,6 +46,16 @@ const calendar: CollectionEntry<"calendar">[] = (
             )}        
           </div>
         </div>
+        <span class="block w-fit mx-auto">
+          <a
+            href="https://paragraph.com/@ethdevnews/subscribe"
+            class="not-prose group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 px-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white justify-center items-center"
+          >
+            <div class="text-sm font-bold">
+              Subscribe to ethdevnews
+            </div>
+          </a>
+        </span>
         <article class="animate">
           <Content />
         </article>
