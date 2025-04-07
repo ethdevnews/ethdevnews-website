@@ -46,7 +46,7 @@ const nextIssue = getNextIssue();
 const prevIssue = getPrevIssue();
 
 const issue = Astro.props;
-const { Content, headings } = await render(issue);
+const { Content } = await render(issue);
 ---
 
 <Layout title={issue.data.title} description={issue.data.description}>
@@ -69,20 +69,6 @@ const { Content, headings } = await render(issue);
           </div>
         )}        
       </div>
-      {
-        issue.data.tags && issue.data.tags?.length > 0 ? (
-          <div class="animate flex gap-2 pt-1">
-            {issue.data.tags.map((tag) => (
-              <a
-                href={`/tags/${tag}`}
-                class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
-              >
-                {tag}
-              </a>
-            ))}
-          </div>
-        ) : null
-      }
     </div>
     <article class="animate">
       <Content />
