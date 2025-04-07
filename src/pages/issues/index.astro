@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import ArrowCard from "@components/ArrowCard.astro";
+import IssueArrowCard from "@components/IssueArrowCard.astro";
 import { ARCHIVE } from "@consts";
 
 const data = (await getCollection("issues"))
@@ -40,7 +40,7 @@ const years = Object.keys(issues).sort((a, b) => parseInt(b) - parseInt(a));
                   <ul class="not-prose flex flex-col gap-4">
                     {issues[year].map((issue) => (
                       <li>
-                        <ArrowCard entry={issue} />
+                        <IssueArrowCard entry={issue} />
                       </li>
                     ))}
                   </ul>

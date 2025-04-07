@@ -2,34 +2,34 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import ArrowCard from "@components/ArrowCard.astro";
+import CalendarArrowCard from "@components/IssueArrowCard.astro";
 import BackToPrevious from "@components/BackToPrevious.astro";
 
 export async function getStaticPaths() {
-  const issues = await getCollection("issues", ({ data }) => !data.draft);
+  const calendar = await getCollection("calendar", ({ data }) => !data.draft);
 
   // Get unique tags
-  const tags = [...new Set(issues.flatMap((issue) => issue.data.tags || []))];
+  const tags = [...new Set(calendar.flatMap((calendarItem) => calendarItem.data.tags || []))];
 
   // Create paths for each tag
   return tags.map((tag) => ({
     params: { id: tag },
     props: {
-      issues: issues.filter((issue) => issue.data.tags?.includes(tag)),
+      calendar: calendar.filter((calendarItem) => calendarItem.data.tags?.includes(tag)),
     },
   }));
 }
 
 const { id } = Astro.params;
-const { issues } = Astro.props;
+const { calendar } = Astro.props;
 
-// Sort issues by date, most recent first
-const sortedIssues = issues.sort(
+// Sort calendar by date, most recent first
+const sortedCalendar = calendar.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
 ---
 
-<Layout title={`Tag: ${id}`} description={`Issues with the tag: ${id}`}>
+<Layout title={`Tag: ${id}`} description={`Calendar items with the tag: ${id}`}>
   <Container>
     <div class="space-y-10" data-pagefind-ignore>
       <BackToPrevious href="/tags"> All tags </BackToPrevious>
@@ -37,7 +37,7 @@ const sortedIssues = issues.sort(
         Issues tagged with "{id}"
       </h1>
       <ul class="animate flex flex-col gap-4">
-        {sortedIssues.map((issue) => <ArrowCard entry={issue} />)}
+        {sortedCalendar.map((calendarItem) => <CalendarArrowCard entry={calendarItem} />)}
       </ul>
     </div>
   </Container>

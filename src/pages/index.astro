@@ -2,7 +2,8 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { SITE, HOME } from "@consts";
-import ArrowCard from "@components/ArrowCard.astro";
+import IssueArrowCard from "@components/IssueArrowCard.astro";
+import CalendarArrowCard from "@components/CalendarArrowCard.astro";
 import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -48,7 +49,7 @@ const calendar: CollectionEntry<"calendar">[] = (
             {
               issues.map((issue) => (
                 <li>
-                  <ArrowCard entry={issue} />
+                  <IssueArrowCard entry={issue} />
                 </li>
               ))
             }
@@ -66,7 +67,7 @@ const calendar: CollectionEntry<"calendar">[] = (
             {
               calendar.map((calendar) => (
                 <li>
-                  <ArrowCard entry={calendar} />
+                  <CalendarArrowCard entry={calendar} />
                 </li>
               ))
             }

@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import ArrowCard from "@components/ArrowCard.astro";
+import CalendarArrowCard from "@components/CalendarArrowCard.astro";
 import { CALENDAR } from "@consts";
 
 const calendar = (await getCollection("calendar"))
@@ -21,7 +21,7 @@ const calendar = (await getCollection("calendar"))
           {
             calendar.map((item) => (
               <li>
-                <ArrowCard entry={item} />
+                <CalendarArrowCard entry={item} />
               </li>
             ))
           }
