@@ -4,7 +4,7 @@
 [ ] Logo
 [ ] Favicon
 [ ] Website image
-[ ] latest issue on home page
+[x] latest issue on home page
 [ ] subscribe button
 
 ## Credits
