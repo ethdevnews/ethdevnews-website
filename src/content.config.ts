@@ -18,6 +18,7 @@ const calendar = defineCollection({
     description: z.string(),
     url: z.string().optional(),
     date: z.coerce.date(),
+    location: z.string().optional(),
     endDate: z.coerce.date().optional(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()).optional(),

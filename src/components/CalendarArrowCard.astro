@@ -1,18 +1,18 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import FormattedDate from "@components/FormattedDate.astro";
+import FormattedDates from "@components/FormattedDates.astro";
 
 type Props = {
-  entry: CollectionEntry<"issues"> | CollectionEntry<"calendar">;
+  entry: CollectionEntry<"calendar">;
 };
 
 const { entry } = Astro.props as {
-  entry: CollectionEntry<"issues"> | CollectionEntry<"calendar">;
+  entry: CollectionEntry<"calendar">;
 };
 ---
 
 <a
-  href={`/${entry.collection}/${entry.id}`}
+  href={entry.data.url}
   class="not-prose group relative flex flex-nowrap rounded-lg border border-black/15 px-4 py-3 pr-10 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
 >
   <div class="flex flex-1 flex-col truncate">
@@ -20,7 +20,10 @@ const { entry } = Astro.props as {
       {entry.data.title}
     </div>
     <div class="text-sm">
-      <FormattedDate date={entry.data.date} /> - <FormattedDate date={entry.data.endDate} />
+      {entry.data.location}
+    </div>
+    <div class="text-sm">
+      <FormattedDates date={entry.data.date} endDate={entry.data.endDate} />
     </div>
   </div>
   <svg
