@@ -4,7 +4,6 @@ export const SITE: Site = {
   TITLE: "ethdevnews",
   DESCRIPTION: "ethdevnews is curated Ethereum news focused on developers (core & application).",
   EMAIL: "ethdevnews@gmail.com",
-  NUM_POSTS_ON_HOMEPAGE: 5,
   NUM_CALENDAR_ITEMS_ON_HOMEPAGE: 3,
 };
 

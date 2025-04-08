@@ -1,6 +1,6 @@
 ---
 title: 'ETHGlobal Prague'
-description: 'Lorem ipsum dolor sit amet'
+description: ''
 date: 'May 30 2025'
 endDate: 'June 1 2025'
 location: 'Prague, Czech Republic'

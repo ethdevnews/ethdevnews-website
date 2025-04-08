@@ -7,7 +7,6 @@ import { SITE, HOME } from "@consts";
 import CalendarArrowCard from "@components/CalendarArrowCard.astro";
 import Link from "@components/Link.astro";
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import IssueNavigation from "@components/IssueNavigation.astro";
 
 const issues = (await getCollection("issues"))
   .filter((issue) => !issue.data.draft)
@@ -17,12 +16,14 @@ const issue = issues[0];
 
 const { Content } = await render(issue);
 
+const currentDate = new Date(); // Get today's date
 
 const calendar: CollectionEntry<"calendar">[] = (
   await getCollection("calendar")
 )
-  .filter((calendarItem) => !calendarItem.data.draft)
-  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+  .filter((calendarItem) => !calendarItem.data.draft) // Filter out draft items
+  .filter((calendarItem) => calendarItem.data.date >= currentDate) // Filter out past dates
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf()) // Sort by date
   .slice(0, SITE.NUM_CALENDAR_ITEMS_ON_HOMEPAGE);
 ---
 

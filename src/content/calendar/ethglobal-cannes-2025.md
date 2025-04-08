@@ -1,6 +1,6 @@
 ---
 title: 'ETHGlobal Cannes'
-description: 'Lorem ipsum dolor sit amet'
+description: ''
 date: 'July 4 2025'
 endDate: 'July 6 2025'
 location: 'Cannes, France'
