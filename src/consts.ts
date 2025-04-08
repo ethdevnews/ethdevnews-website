@@ -2,14 +2,14 @@ import type { Metadata, Site, Socials } from "@types";
 
 export const SITE: Site = {
   TITLE: "ethdevnews",
-  DESCRIPTION: "ethdevnews is curated Ethereum news focused on developers (core & application).",
+  DESCRIPTION: "Ethereum news focused on developers (core & application).",
   EMAIL: "ethdevnews@gmail.com",
   NUM_CALENDAR_ITEMS_ON_HOMEPAGE: 3,
 };
 
 export const HOME: Metadata = {
   TITLE: "latest",
-  DESCRIPTION: "Astro Micro is an accessible theme for Astro.",
+  DESCRIPTION: "Latest Ethereum news focused on developers.",
 };
 
 export const ARCHIVE: Metadata = {
