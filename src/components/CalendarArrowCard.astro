@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import FormattedDates from "@components/FormattedDates.astro";
+import CalendarTag from "@components/CalendarTag.astro";
 
 type Props = {
   entry: CollectionEntry<"calendar">;
@@ -25,6 +26,13 @@ const { entry } = Astro.props as {
     <div class="text-sm">
       <FormattedDates date={entry.data.date} endDate={entry.data.endDate} />
     </div>
+    {entry.data.tags && entry.data.tags.length > 0 && (
+      <div class="mt-2 flex flex-wrap gap-2">
+        {entry.data.tags.map((tag) => (
+          <CalendarTag tag={tag} />
+        ))}
+      </div>
+    )}
   </div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
