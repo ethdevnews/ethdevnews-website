@@ -1,123 +1,23 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
+import { getEntry } from 'astro:content';
 import { ABOUT } from "@consts";
 import Link from "@components/Link.astro";
+
+const about = await getEntry('pages', 'about');
+if (!about) {
+  throw new Error('About page not found in content collection');
+}
+const { Content } = await about.render();
 ---
 
 <Layout title={ABOUT.TITLE} description={ABOUT.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
-      <h1 class="font-semibold text-black dark:text-white">About</h1>
-      <div class="space-y-16">
-        <section>
-          <article class="space-y-4">
-            <span>
-              <p>
-                ethdevnews is curated Ethereum news focused on developers (core
-                & application), published by Andrew B Coathup.
-              </p>
-            </span>
-          </article>
-        </section>
+       <div class="prose dark:prose-invert max-w-none">
+        <Content components={{ Link }} />
       </div>
-      <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">Disclosures</h2>
-        <article>
-          <p>
-            Andrew invested in ETH and holds OP (airdrops & RetroPGF) and ENS
-            (airdrop).
-          </p>
-        </article>
-      </section>
-      <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">Resources</h2>
-        <article>
-          <p>
-            <Link href="https://ethresear.ch/">Eth Research</Link>: Discourse
-            forum for Ethereum research.
-          </p>
-          <p>
-            <Link href="https://ethereum-magicians.org">Eth Magicians</Link>:
-            Discourse forum for protocol call summaries, EIP/RIP/ERC
-            discussions, naming and community discussions. Andrew is a
-            moderator.
-          </p>
-          <p>
-            <span class="font-semibold">Eth R&D Discord</span>: Discord for
-            discussions on Eth R&D.
-          </p>
-          <p>
-            <Link href="https://www.reddit.com/r/ethereum">r/Ethereum</Link>:
-            Subreddit for community discussions. Andrew is a moderator.
-          </p>
-          <p>
-            <Link href="https://github.com/ethereum/"
-              >Ethereum Foundation GitHub</Link
-            >:
-            <ul>
-              <li>
-                <Link href="https://github.com/ethereum/pm/">ethereum/pm</Link>:
-                protocol call agendas.
-              </li>
-              <li>
-                <Link href="https://github.com/ethereum/EIPs/"
-                  >ethereum/EIPs</Link
-                >: Ethereum improvement proposals.
-              </li>
-              <li>
-                <Link href="https://github.com/ethereum/RIPs/"
-                  >ethereum/RIPs</Link
-                >: Rollup (Layer 2) improvement proposals.
-              </li>
-              <li>
-                <Link href="https://github.com/ethereum/ERCs/"
-                  >ethereum/ERCs</Link
-                >: application layer standards.
-              </li>
-            </ul>
-          </p>
-        </article>
-      </section>
-
-      <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">Credits</h2>
-        <article>
-          <p>
-            <Link href="https://weekinethereumnews.com"
-              >Week in Ethereum News</Link
-            > (WiEN): Published by <Link href="https://x.com/evanvanness"
-              >Evan Van Ness</Link
-            > from August 2016 until December 2024. Andrew was the editor from May
-            2021. WiEN set the standard for curated Ethereum developer news and ethdevnews
-            stands on the shoulders of this giant.
-          </p>
-
-          <p>
-            <Link href="https://github.com/trevortylerlee/astro-micro"
-              >Astro Micro</Link
-            >: ethdevnews is built on Astro and uses Astro Micro theme (MIT licence) as a
-            base.
-          </p>
-
-          <p>
-            <Link href="https://openmoji.org/library/emoji-1FA81/#variant=black"
-              >OpenMoji kite</Link
-            >: ethdevnews logo is based on kite emoji (CC BY-SA 4.0).
-          </p>
-
-
-          <p>
-            <Link href="https://daringfireball.net">Daring Fireball</Link> (DF):
-            John Gruber's minimalistic blog focused on one topic sustained by a single
-            weekly sponsor is the inspiration for ethdevnews minimalism and long
-            term sustainability model. John is also the creator of <Link
-              href="https://daringfireball.net/2004/03/introducing_markdown"
-              >Markdown</Link
-            >.
-          </p>
-        </article>
-      </section>
     </aside>
   </Container>
 </Layout>
