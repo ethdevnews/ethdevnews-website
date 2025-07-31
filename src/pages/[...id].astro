@@ -12,7 +12,7 @@ export async function getStaticPaths() {
     .filter((issue) => !issue.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return issues.map((issue) => ({
-    params: { id: issue.id },
+    params: { id: issue.id.replace(/\.md$/, "") },
     props: issue,
   }));
 }
@@ -25,7 +25,7 @@ const issues = (await getCollection("issues"))
 function getNextIssue() {
   let issueIndex;
   for (const issue of issues) {
-    if (issue.id === Astro.params.id) {
+    if (issue.id.replace(/\.md$/, "") === Astro.params.id) {
       issueIndex = issues.indexOf(issue);
       return issues[issueIndex + 1];
     }
@@ -35,7 +35,7 @@ function getNextIssue() {
 function getPrevIssue() {
   let issueIndex;
   for (const issue of issues) {
-    if (issue.id === Astro.params.id) {
+    if (issue.id.replace(/\.md$/, "") === Astro.params.id) {
       issueIndex = issues.indexOf(issue);
       return issues[issueIndex - 1];
     }
