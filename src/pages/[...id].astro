@@ -54,27 +54,39 @@ const { Content } = await render(issue);
     <div class="animate">
       <BackToPrevious href="/archive">Back to archive </BackToPrevious>
     </div>
-    <div class="my-10 space-y-1">
-      <h1 class="animate text-3xl font-semibold text-black dark:text-white">
-        {issue.data.title}
-      </h1>
-      <div class="animate flex items-center gap-1.5">
-        <div class="font-base text-sm">
-          <FormattedDate date={issue.data.date} />
-        </div>
-        &bull;
-        {issue.body && (
+    <div class="space-y-16">
+      <div class="my-10 space-y-1">
+        <h1 class="animate text-3xl font-semibold text-black dark:text-white">
+          {issue.data.title}
+        </h1>
+        <div class="animate flex items-center gap-1.5">
           <div class="font-base text-sm">
-            {readingTime(issue.body)}
+            <FormattedDate date={issue.data.date} />
           </div>
-        )}        
+          &bull;
+          {issue.body && (
+            <div class="font-base text-sm">
+              {readingTime(issue.body)}
+            </div>
+          )}        
+        </div>
       </div>
+      <span class="block w-fit mx-auto">
+        <a
+          href="https://paragraph.com/@ethdevnews/subscribe"
+          class="not-prose group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 px-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white justify-center items-center"
+        >
+          <div class="text-sm font-bold">
+            Subscribe to ethdevnews
+          </div>
+        </a>
+      </span>
+      <article class="animate">
+        <Content />
+        <div class="mt-24">
+          <IssueNavigation prevIssue={prevIssue} nextIssue={nextIssue} />
+        </div>
+      </article>
     </div>
-    <article class="animate">
-      <Content />
-      <div class="mt-24">
-        <IssueNavigation prevIssue={prevIssue} nextIssue={nextIssue} />
-      </div>
-    </article>
   </Container>
 </Layout>
