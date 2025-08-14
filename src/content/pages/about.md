@@ -20,7 +20,7 @@ Sponsors, paid listings, grants and donations are welcome but funding does not g
 
 Sponsors get a banner image and up to 12 lines in a single issue.  Only one sponsor per issue.
 
-Subscribers: 218 *(August 14, 2025)* 
+Subscribers: 223 *(August 14, 2025)* 
 
 Price: $2000 in ETH/USDC.  50% discount for August 2025 and 20% discount for multiple issues.
 
@@ -28,7 +28,7 @@ Email abcoathup at gmail to enquire.
 
 ### Paid listings
 
-Each issue can have up to 5 paid listings.  Listings are a single line with a maximum of 70 characters.
+Each issue can have up to 5 paid listings.  Listings are a single line with a maximum of 70 characters.  20% discount for multiple issues.
 
 Use listings to promote jobs advertised/wanted, apps or side-projects to the Ethereum community.
 Listings do not get favorable coverage.
