@@ -29,7 +29,8 @@ Roman Storm found guilty of unlicensed money transmitting charge, ePBS & Block-l
 ### Layer 1
 
 * [Fusaka](https://forkcast.org/upgrade/fusaka) upgrade:  
-  * [Fusaka-devnet-4](https://fusaka-devnet-4.ethpandaops.io/) live: 1.5k nodes with 43.5k validators, \~10% size of mainnet  
+  * [Fusaka-devnet-4](https://fusaka-devnet-4.ethpandaops.io/) live: 1.5k nodes with 43.5k validators, \~10% size of mainnet 
+* [Glamsterdam](https://forkcast.org/upgrade/glamsterdam) upgrade:  
   * [EIP7732](https://forkcast.org/upgrade/glamsterdam#eip-7732) ePBS:   
     * Flashbots: [free option problem quantified](https://collective.flashbots.net/t/the-free-option-problem-in-epbs-part-ii/5145), realized option value is low (4 ETH) on average days but high (\>40ETH) on abnormal volatility days  
 * Toni Wahrstätter: [gas refunds for resetting a slot to zero](https://ethresear.ch/t/overclocking-blocks-with-gas-refunds/22862) distort block gas accounting  
