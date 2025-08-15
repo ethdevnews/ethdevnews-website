@@ -1,6 +1,6 @@
 ---
 title: 'ethdevnews weekly #2'
-description: ''
+description: 'Fede donated $500k to free Roman Storm, Hardhat 3 beta, malicious IDE extensions'
 date: 'August 15 2025'
 ---
 
