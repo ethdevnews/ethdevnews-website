@@ -5,11 +5,7 @@ import { getCollection } from "astro:content";
 export async function GET(context) {
   const issues = (await getCollection("issues")).filter((issue) => !issue.data.draft);
 
-  const calendar = (await getCollection("calendar")).filter(
-    (project) => !project.data.draft,
-  );
-
-  const items = [...issues, ...calendar].sort(
+  const items = issues.sort(
     (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
   );
 
@@ -21,7 +17,7 @@ export async function GET(context) {
       title: item.data.title,
       description: item.data.description,
       pubDate: item.data.date,
-      link: `/${item.collection}/${item.id.replace(/\/index\.md$/, "").replace(/\.md$/, "")}/`,
+      link: `/${item.id.replace(/\/index\.md$/, "").replace(/\.md$/, "")}/`,
     })),
   });
 }
