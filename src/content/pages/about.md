@@ -13,14 +13,18 @@ ethdevnews is curated Ethereum news focused on developers (core & application), 
 * [OpenMoji kite](https://openmoji.org/library/emoji-1FA81/#variant=black): ethdevnews logo is based on kite emoji (CC BY-SA 4.0).
 * [Daring Fireball](https://daringfireball.net) (DF): John Gruber's minimalistic blog focused on one topic sustained by a single weekly sponsor is the inspiration for ethdevnews minimalism and long term sustainability model. John is also the creator of [Markdown](https://daringfireball.net/2004/03/introducing_markdown). 
 
+## Licenses
+* Content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+* Software & website is [MIT](https://github.com/ethdevnews/ethdevnews-website?tab=MIT-1-ov-file)
+
 ## Funding
-Sponsors, paid listings, grants and donations are welcome but funding does not get you favorable coverage.
+ethdevnews is funded by sponsors, paid listings, grants and donations.  Providing funding does not get you favorable coverage.
 
 ### Sponsorships
 
 Sponsors get a banner image and up to 12 lines in a single issue.  Only one sponsor per issue.
 
-Subscribers: 261 *(August 20, 2025)* 
+Subscribers: 270 *(August 21, 2025)* 
 
 Price: $2000 in ETH/USDC.  50% discount for August 2025 and 20% discount for multiple issues.
 
