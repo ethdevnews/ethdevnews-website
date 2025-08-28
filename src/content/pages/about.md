@@ -24,7 +24,7 @@ ethdevnews is funded by sponsors, paid listings, grants and donations.  Providin
 
 Sponsors get a banner image and up to 12 lines in a single issue.  Only one sponsor per issue.
 
-Subscribers: 282 *(August 22, 2025)* 
+Subscribers: 335 *(August 28, 2025)* 
 
 Price: $2000 in ETH/USDC.  50% discount for August 2025 and 20% discount for multiple issues.
 
