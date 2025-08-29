@@ -8,7 +8,7 @@ Fusaka mainnet upgrade potentially in December, US GDP onchain, r/Ethereum AMAs 
 
 ### All core devs (main protocol calls)
 
-#### All core devs \- consensus (ACDE) [\#219](https://ethereum-magicians.org/t/all-core-devs-execution-acde-219-august-28-2025/25106/2)
+#### All core devs \- execution (ACDE) [\#219](https://ethereum-magicians.org/t/all-core-devs-execution-acde-219-august-28-2025/25106/2)
 
 * [Fusaka](https://forkcast.org/upgrade/fusaka) upgrade (targeting 2025):  
   * Mainnet upgrade potentially in December if testing goes well, timeline based on [upgrade process](https://github.com/ethereum/pm/blob/master/processes/protocol-upgrade.md) (30 days between client releases & first testnet and 30 days between last testnet & mainnet);  Checking with L2s & infrastructure teams on timing requirements  
