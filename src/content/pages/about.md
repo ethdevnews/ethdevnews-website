@@ -24,9 +24,9 @@ ethdevnews is funded by sponsors, paid listings, grants and donations.  Providin
 
 Sponsors get a banner image and up to 12 lines in a single issue.  Only one sponsor per issue.
 
-Subscribers: 356 *(September 4, 2025)* 
+Subscribers: 358 *(September 5, 2025)* 
 
-Price: $2000 in ETH/USDC.  50% discount for August 2025 and 20% discount for multiple issues.
+Price: $2000 in ETH/USDC.  20% discount for multiple issues.
 
 Email abcoathup at gmail to enquire.
 
@@ -68,6 +68,6 @@ Andrew invested in ETH and holds OP (from airdrops, RetroPGF & citizenship) and 
 
 ## Additional Ethereum news sources
 
-* [Christine D. Kim](https://christinedkim.substack.com/): Newsletter
+* [Christine D. Kim](https://christinedkim.substack.com/): Newsletter & interviews
 * [The Daily Gwei](https://www.youtube.com/c/TheDailyGwei): YouTube hosted by Anthony Sassano
 * [ethdaily.io](https://ethdaily.io): Newsletter & podcast
