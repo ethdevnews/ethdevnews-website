@@ -4,7 +4,7 @@ description: About ethdevnews
 ---
 # About
 
-ethdevnews is curated Ethereum news focused on developers (core & application), published by Andrew B Coathup (former editor of [Week in Ethereum News](https://weekinethereumnews.com)).
+ethdevnews is curated Ethereum news focused on developers (core & application), published by Andrew B Coathup (former editor of [Week in Ethereum News](https://weekinethereumnews.com) and [Ethereal news](https://ethereal.news)).
 
 ## Credits
 
@@ -26,7 +26,7 @@ Sponsors get a banner image and up to 12 lines in a single issue.  Only one spon
 
 Subscribers: 396 *(October 22, 2025)* 
 
-Price: $2000 in ETH/USDC.  20% discount for multiple issues.
+Price: $1000 in ETH/USDC.  20% discount for multiple issues.
 
 Email abcoathup at gmail to enquire.
 
@@ -37,7 +37,7 @@ Each issue can have up to 5 paid listings.  Listings are a single line with a ma
 Use listings to promote jobs advertised/wanted, apps or side-projects to the Ethereum community.
 Listings do not get favorable coverage.
 
-Price: $100 in ETH/USDC to [ethdevnews.eth](https://etherscan.io/address/ethdevnews.eth) on mainnet or L2.
+Price: $50 in ETH/USDC to [ethdevnews.eth](https://etherscan.io/address/ethdevnews.eth) on mainnet or L2.
 
 Email abcoathup at gmail with your listing.
 
